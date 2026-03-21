@@ -17,8 +17,28 @@ This framework brings enterprise-grade data quality assessment to healthcare org
 - **Clinical Context Awareness**: Healthcare-specific validation rules that catch issues generic tools miss
 - **Distributed Processing**: Apache Spark backend for handling millions of patient records
 - **FHIR Native**: Built-in support for FHIR R4 resources
-- **Real-time Monitoring**: Quality metrics dashboard and alerting
+- **Real-time Monitoring**: Interactive web dashboard with live quality metrics visualization
 - **HIPAA Compliant**: Privacy-preserving assessment throughout the pipeline
+
+### 🆕 Real-time Dashboard
+
+Run the interactive dashboard to monitor data quality in real-time:
+
+```bash
+# Install dashboard dependencies
+pip install dash plotly
+
+# Run the dashboard
+python src/healthpipe/dashboard/app.py
+
+# Open http://localhost:8050 in your browser
+```
+
+Features:
+- Live quality metrics across all 6 dimensions
+- Auto-refreshing charts every 5 seconds
+- Quality alerts and issue tracking
+- Responsive design for desktop and mobile
 
 ## 📊 Proven Results
 
