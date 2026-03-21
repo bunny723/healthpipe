@@ -114,11 +114,11 @@ app.layout = html.Div([
 
 # Callbacks for updating charts
 @app.callback(
-    [Output('overall-score', 'children'),
-     Output('records-processed', 'children'),
-     Output('quality-alerts', 'children'),
-     Output('ai-ready-score', 'children')],
-    [Input('interval-component', 'n_intervals')]
+    Output('overall-score', 'children'),
+    Output('records-processed', 'children'),
+    Output('quality-alerts', 'children'),
+    Output('ai-ready-score', 'children'),
+    Input('interval-component', 'n_intervals')
 )
 def update_metrics(n):
     """Update summary metrics."""
@@ -142,7 +142,7 @@ def update_metrics(n):
 
 @app.callback(
     Output('time-series-chart', 'figure'),
-    [Input('interval-component', 'n_intervals')]
+    Input('interval-component', 'n_intervals')
 )
 def update_time_series(n):
     """Update time series chart."""
@@ -175,7 +175,7 @@ def update_time_series(n):
 
 @app.callback(
     Output('radar-chart', 'figure'),
-    [Input('interval-component', 'n_intervals')]
+    Input('interval-component', 'n_intervals')
 )
 def update_radar_chart(n):
     """Update radar chart with current quality dimensions."""
@@ -217,7 +217,7 @@ def update_radar_chart(n):
 
 @app.callback(
     Output('source-breakdown-chart', 'figure'),
-    [Input('interval-component', 'n_intervals')]
+    Input('interval-component', 'n_intervals')
 )
 def update_source_breakdown(n):
     """Update data source quality breakdown."""
@@ -239,7 +239,7 @@ def update_source_breakdown(n):
 
 @app.callback(
     Output('issues-table', 'children'),
-    [Input('interval-component', 'n_intervals')]
+    Input('interval-component', 'n_intervals')
 )
 def update_issues_table(n):
     """Update recent issues list."""
